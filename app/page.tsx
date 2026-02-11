@@ -131,7 +131,7 @@ export default function DashboardPage() {
       <aside className="w-64 bg-white shadow-sm hidden md:flex flex-col p-6 space-y-6">
         <h2 className="text-xl font-bold text-gray-800 pb-5">RouteVision</h2>
 
-        <nav className="space-y-2">
+        <nav className="space-y-2 cursor-pointer">
           <div className="p-2 rounded-lg bg-gray-100 font-medium text-gray-800">
             Dashboard
           </div>
@@ -193,18 +193,20 @@ export default function DashboardPage() {
           <h2 className="text-lg font-semibold mb-4">
             Failure Reasons Distribution
           </h2>
-          <Bar data={barChartData} />
+          <Bar className="cursor-pointer" data={barChartData} />
         </div>
 
         {/* Pie Charts */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 cursor-pointer">
           <div className="bg-white p-6 rounded-2xl shadow-sm">
             <h2 className="text-lg font-semibold mb-4">Failures by Area</h2>
             <Pie data={areaChartData} />
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm">
-            <h2 className="text-lg font-semibold mb-4">Failures by Reason</h2>
+          <div className="bg-white p-6 rounded-2xl shadow-sm cursor-pointer">
+            <h2 className="text-lg font-semibold mb-4">
+              Failures by Reason
+            </h2>
             <Pie data={reasonPieData} />
           </div>
 
@@ -233,7 +235,7 @@ export default function DashboardPage() {
 
               <tbody>
                 {failures.map((item) => (
-                  <tr key={item.id} className="bg-gray-50 hover:bg-gray-100">
+                  <tr key={item.id} className="bg-gray-50 hover:bg-gray-100 cursor-pointer  ">
                     <td colSpan="4" className="p-0">
                       <div
                         className="
